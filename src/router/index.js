@@ -9,6 +9,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+    //the component which should be displayed
   },
   {
     path: "/about",
@@ -18,10 +19,16 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/services",
+    name: "Services",
+    component: () => import("../views/Services.vue")
   }
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes
 });
 
