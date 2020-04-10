@@ -41,6 +41,9 @@ export default new Vuex.Store({
   getters: {
     total_employees(state) {
       return state.users.filter(user => user.employed).length;
+    },
+    get_user: state => id => {
+      return state.users.find(user => user.id === id);
     }
   }, //like computed properties
   modules: {}

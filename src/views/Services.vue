@@ -6,6 +6,7 @@ tr<template>
     <ul>
       <li v-for="(user, index) in users" :key="index" class="candidates">
         ID: {{ index + 1 }} NAME: {{ user.name }}
+        <router-link :to="`/candidate/${user.id}`"> Profile </router-link>
         <button @click="deleteUser(index)" class="delete">DELETE</button>
         <button v-if="!user.employed" @click="Userstatus(user)" class="employ">
           EMPLOY
